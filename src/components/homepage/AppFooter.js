@@ -1,17 +1,60 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import Icon from '@material-ui/core/Icon';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    padding: '0px 100px',
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.secondary.main,
+  },
+  container: {
+    color: theme.palette.primary.light,
+    minHeight: 300,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 150,
+    '& a': {
+      fontFamily: 'Advent PRO',
+      display: 'flex',
+      flexFlow: 'row nowrap',
+      alignItems: 'center',
+      color: theme.palette.secondary.main,
+      textDecoration: 'none',
+      fontSize: '75px',
+      letterSpacing: '3px',
+      textTransform: 'uppercase',
+      margin: '10px 0px',
+      fontWeight: 900,
+      // color: theme.palette.secondary.light,
+      // textShadow: '-2px 0 #8224e3, 0 -2px #8224e3, 2px 0 #8224e3, 0 2px #8224e3, 2px 2px #8224e3, -2px -2px #8224e3, -2px 2px #8224e3, 2px -2px #8224e3, 6px 6px #8224e3'
+      textShadow: '2px 0 #fff, 0 -2px #fff, 2px 0 #fff, 2px 2px #fff, 2px 2px #fff, -2px -2px #fff, -2px 2px #fff, 2px -2px #fff',
+      transition: 'all 0.3s ease-out',
+    },
+    '& a:hover': {
+      color: theme.palette.secondary.light,
+      textShadow: 'none'
+    },
+    '& i': {
+      paddingRight: 15
+    }
+  },
+  heroH2: {
+    color: theme.palette.primary.light,
+    fontSize: '96px',
+    fontFamily: 'Advent Pro',
+    fontWeight: 400,
+    textTransform: 'uppercase',
+    lineHeight: '1em',
+    marginBottom: 0,
+    zIndex: 3,
+    [theme.breakpoints.between('sm', 'md')]: {
+      fontSize: '55px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '40px',
+    }
   },
   bottomFooter: {
     borderTop: '2px solid #fff',
@@ -31,7 +74,10 @@ const useStyles = makeStyles((theme) => ({
   socialIconsDiv: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'flex-end'
+    justifyContent: 'center',
+    '& a': {
+      margin: '0px 10px',
+    }
   },
   socialIcon: {
     border: `1px solid ${theme.palette.primary.light}`,
@@ -44,7 +90,9 @@ const useStyles = makeStyles((theme) => ({
     margin: '30px 0px 20px 0px',
     fontWeight: 300
   },
-  pGrid: {
+  copyrightsDiv: {
+    textAlign: 'center',
+    width: '100%',
     padding: '20px'
   },
   p: {
@@ -52,104 +100,49 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'capitalize',
     fontWeight: 300,
     margin: 'auto'
+  },
+  shapeDivider: {
+    position: 'absolute',
+    left: 0,
+    width: '100%',
+    overflow: 'hidden',
+    lineHeight: 0,
+    '& svg': {
+      position: 'relative',
+      display: 'block',
+      width: 'calc(143% + 1.3px)',
+      height: '93px',
+    },
+    '& path': {
+      fill: theme.palette.secondary.light
+    }
   }
-}));
+}
+));
 
 export default function AppFooter() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-        <Grid container>
+    <div className={classes.root}> 
 
-          <Grid item xs={6} sm={4} md={3}>
+      <div className={classes.shapeDivider}>
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+          </svg>
+      </div>
 
-          </Grid>
-          <Grid item xs={6} sm={4} md={3}>
-            <h6 className={classes.h6}>Explore</h6>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Features</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Pricing</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Examples</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Courses</a>
-              </li>
-            </ul>
-          </Grid>
 
-          <Grid item xs={6} sm={4} md={3}>
-            <h6 className={classes.h6}>Company</h6>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>About</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Careers</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Blog</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Affiliates</a>
-              </li>
-            </ul>
-          </Grid>
-
-          <Grid item xs={6} sm={4} md={3}>
-            <h6 className={classes.h6}>Support</h6>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Knowledge Base</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Contact Support</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Contact Sales</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Privacy Policy</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Terms Of Use</a>
-              </li>
-              <li className={classes.listItem}>
-                <a href="#" className={classes.listLink}>Cookie Policy</a>
-              </li>
-            </ul>
-          </Grid>
-
-        </Grid>
-        <Grid container className={classes.bottomFooter}>
-          <Grid item xs={12} sm={6} md={6} justifyContent="flex-start" className={classes.pGrid}>
-            <p className={classes.p}>© Hostcourse {new Date().getFullYear()}. All rights reserved</p>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <div className={classes.socialIconsDiv}>
-              <IconButton color="primary" className={classes.socialIcon}>
-                <Icon className="fab fa-facebook" />
-              </IconButton>
-                <IconButton color="primary" className={classes.socialIcon}>
-              <Icon className="fab fa-twitter" />
-              </IconButton>
-              <IconButton color="primary" className={classes.socialIcon}>
-                <Icon className="fab fa-instagram" />
-              </IconButton>
-              <IconButton color="primary" className={classes.socialIcon}>
-                <Icon className="fab fa-pinterest" />
-              </IconButton>
-              <IconButton color="primary" className={classes.socialIcon}>
-                <Icon className="fab fa-linkedin-in" />
-              </IconButton>
-            </div>
-          </Grid>
-        </Grid>
+      <div className={classes.container}>
+        {/* <h2 className={classes.heroH2}>Contact Us</h2> */}
+        <a href="mailto:antonio@alpibo.com">antonio@alpibo.com</a>
+        <a href="https://www.facebook.com/alpibowebdesign" target="_blank">Follow on Facebook</a>
+        <a href="https://twitter.com/AlpiboA" target="_blank">Follow on Twitter</a>
+        <a href="https://github.com/antonioiliev" target="_blank">Visit GitHub</a>
+      </div>
+      <div className={classes.copyrightsDiv}>
+        <p className={classes.p}>COPYRIGHT © ALPIBO {new Date().getFullYear()}. All rights reserved</p>
+      </div>
     </div>
   );
 }

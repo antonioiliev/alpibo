@@ -9,8 +9,6 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { green, red } from '@material-ui/core/colors';
 
-const store = configureStore();
-
 const theme = createMuiTheme({
   palette: {
     primary: {

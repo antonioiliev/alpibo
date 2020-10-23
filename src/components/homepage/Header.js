@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import AppBar from './components/AppBar';
-import Toolbar, { styles as toolbarStyles } from './components/Toolbar';
+import Toolbar from '@material-ui/core/Toolbar';
 import routes from '../../constants/routes.json';
 import anime from 'animejs/lib/anime.es.js';
 import HeaderMenu from './components/HeaderMenu';
@@ -65,11 +65,6 @@ const Header = props => {
           <HeaderMenu />
         </Toolbar>
       </AppBar>
-      {/* <div className={classes.svgLineDiv}>
-        <svg id="svgBorder" className={classes.svg} height="15" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="0" y1="0" x2="100%" y2="0" className={classes.svgLine}></line>
-        </svg>
-      </div> */}
     </React.Fragment>
   );
 }

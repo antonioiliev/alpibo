@@ -14,9 +14,9 @@ const styles = (theme) => ({
     }
   },
   svgPolygon: {
-    fill: theme.palette.primary.main,
-    strokeWidth: 2,
-    stroke: '#fff',
+    // fill: theme.palette.secondary.main,
+    // strokeWidth: 2,
+    // stroke: theme.palette.secondary.main,
     strokeDasharray: 1000,
     zIndex: -1
   },

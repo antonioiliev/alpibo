@@ -53,40 +53,31 @@ const styles = (theme) => ({
 const menuItems = [
     {
         title: 'Services',
-        href: '#'
+        href: '#services'
     },
     {
         title: 'Portfolio',
-        href: '#'
+        href: '#portfolio'
     },
     {
         title: 'Partners',
-        href: '#'
+        href: '#partners'
     },
     {
         title: 'Contact us',
-        href: '#'
+        href: '#contact-us'
     },
     {
         title: 'Blog',
-        href: '#'
+        href: '/blog'
     }
 ];
 
 const HeaderMenu = props => {
   const { classes } = props;
-  const [loggedIn, setLoggedIn] = React.useState(false);
-  const [userData, setUserData] = React.useState({ email: '' });
   const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
-    const loginCookeieFromStorage = window.localStorage.getItem('hostcourse_token');
-
-    if (loginCookeieFromStorage !== null) {
-      setLoggedIn(true);
-      setUserData({ email: window.localStorage.getItem('hostcourse_email')});
-    }
-
     window.addEventListener('resize', () => {
         setScreenWidth(window.innerWidth);
         console.log('inner width', window.innerWidth);

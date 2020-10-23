@@ -2,7 +2,10 @@ import React from 'react';
 import AppFooter from '../components/homepage/AppFooter';
 import Intro from '../components/homepage/Intro';
 import WhatWeDo from '../components/homepage/WhatWeDo';
-import AppAppBar from '../components/homepage/Header.js';
+import TechStack from '../components/homepage/components/TechStack';
+import AppAppBar from '../components/homepage/Header';
+import Portfolio from '../components/homepage/Portfolio';
+import Partners from '../components/homepage/Partners';
 
 const HomePage = () => {
 
@@ -11,6 +14,10 @@ const HomePage = () => {
         <AppAppBar />
         <Intro />
         <WhatWeDo />
+        <TechStack />
+        <Portfolio />
+        <Partners />
+        <AppFooter />
     </React.Fragment>
   );
 }

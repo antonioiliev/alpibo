@@ -6,8 +6,8 @@ import Hexagons from './components/Hexagons';
 
 const styles = (theme) => ({
   root: {
-    color: theme.palette.primary.light,
-    background: theme.palette.primary.dark,
+    color: theme.palette.primary.dark,
+    background: theme.palette.primary.light,
     zIndex: 20,
     display: 'flex',
     maxWidth: '100%',
@@ -32,10 +32,10 @@ const styles = (theme) => ({
     }
   },
   heroH2: {
-    color: theme.palette.primary.light,
+    color: theme.palette.primary.main,
     fontSize: '86px',
     fontFamily: 'Advent Pro',
-    fontWeight: 300,
+    fontWeight: 900,
     textTransform: 'uppercase',
     lineHeight: '1em',
     marginBottom: 0,
@@ -49,7 +49,7 @@ const styles = (theme) => ({
   },
   heroP: {
     fontFamily: 'Montserrat',
-    color: theme.palette.primary.light,
+    color: theme.palette.primary.dark,
     fontSize: '18px',
     fontWeight: 500,
     padding: '20px 0px',
@@ -60,6 +60,8 @@ const styles = (theme) => ({
   },
   boldSpan: {
     fontWeight: 900,
+    color: theme.palette.secondary.light,
+    textShadow: '-2px 0 #8224e3, 0 -2px #8224e3, 2px 0 #8224e3, 0 2px #8224e3, 2px 2px #8224e3, -2px -2px #8224e3, -2px 2px #8224e3, 2px -2px #8224e3, 6px 6px #8224e3'
   },
   svgPolygon: {
     fill: 'none',
@@ -219,9 +221,9 @@ function Intro(props) {
           web presence
         </span></h2>
         <div>
-          <svg className={classes.svg} viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          {/* <svg className={classes.svg} viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <line ref={letterMaskingRef} x1="0" y1="0" x2="100%" y2="0" className={classes.svgLine}></line>
-          </svg>
+          </svg> */}
         </div>
         <p ref={descriptionRef} className={classes.heroP}>We rely on our expertise to deliver eye-catching and easy to use software solutions that will elevate your online presence and drive more sales</p>
         <HeroSignUpButton ctaRef={ctaRef} />

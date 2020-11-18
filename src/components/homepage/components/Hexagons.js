@@ -1,16 +1,30 @@
 import React from 'react';
-import anime from 'animejs/lib/anime.es.js';
 import { withStyles } from '@material-ui/core/styles';
 import Hexagon from './Hexagon';
 
 const styles = (theme) => ({
   root: {
     position: 'absolute',
-    top: 400,
-    right: -700,
+    top: 360,
+    right: -770,
     zIndex: 1,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.up('xl')]: {
+      top: 250,
       right: -200,
+    },
+    [theme.breakpoints.down('xl')]: {
+      top: 250,
+      right: -400,
+    },
+    ['@media (min-width: 1281px) and (max-width: 1779px)']: {
+      right: -800,
+    },
+    [theme.breakpoints.down('md')]: {
+      top: 200,
+      right: -700,
+    },
+    ['@media (max-width: 1120px)']: {
+      display: 'none'
     }
   },
   svgPolygon: {
@@ -25,8 +39,13 @@ const styles = (theme) => ({
     height: 300,
     width: 170,
     [theme.breakpoints.down('md')]: {
-      height: 200,
-      width: 110,
+      height: 250,
+      width: 140,
+      top: 275,
+      left: -155
+    },
+    ['@media (max-width: 1120px)']: {
+      display: 'none'
     }
   },
   svgHexagon2: {
@@ -36,8 +55,11 @@ const styles = (theme) => ({
     height: 300,
     width: 170,
     [theme.breakpoints.down('md')]: {
-      height: 200,
-      width: 110,
+      height: 250,
+      width: 140
+    },
+    ['@media (max-width: 1120px)']: {
+      display: 'none'
     }
   },
   svgHexagon3: {
@@ -47,8 +69,11 @@ const styles = (theme) => ({
     height: 300,
     width: 170,
     [theme.breakpoints.down('md')]: {
-      height: 200,
-      width: 110,
+      height: 250,
+      width: 140,
+    },
+    ['@media (max-width: 1120px)']: {
+      display: 'none'
     }
   },
   svgHexagon4: {
@@ -58,8 +83,12 @@ const styles = (theme) => ({
     height: 300,
     width: 170,
     [theme.breakpoints.down('md')]: {
-      height: 200,
-      width: 110,
+      height: 250,
+      width: 140,
+      left: -645,
+    },
+    ['@media (max-width: 1120px)']: {
+      display: 'none'
     }
   },
   svgHexagon5: {
@@ -69,8 +98,13 @@ const styles = (theme) => ({
     height: 300,
     width: 170,
     [theme.breakpoints.down('md')]: {
-      height: 200,
-      width: 110,
+      height: 250,
+      width: 140,
+      top: 25,
+      left: -435
+    },
+    ['@media (max-width: 1120px)']: {
+      display: 'none'
     }
   },
   svgHexagon6: {
@@ -80,8 +114,13 @@ const styles = (theme) => ({
     height: 300,
     width: 170,
     [theme.breakpoints.down('md')]: {
-      height: 200,
-      width: 110,
+      height: 250,
+      width: 140,
+      top: 275,
+      left: -575
+    },
+    ['@media (max-width: 1120px)']: {
+      display: 'none'
     }
   },
   svgHexagon7: {
@@ -91,8 +130,13 @@ const styles = (theme) => ({
     height: 300,
     width: 170,
     [theme.breakpoints.down('md')]: {
-      height: 200,
-      width: 110,
+      height: 250,
+      width: 140,
+      top: 150,
+      left: -925
+    },
+    ['@media (max-width: 1120px)']: {
+      display: 'none'
     }
   },
   svgHexagon8: {
@@ -102,190 +146,19 @@ const styles = (theme) => ({
     height: 300,
     width: 170,
     [theme.breakpoints.down('md')]: {
-      height: 200,
-      width: 110,
+      height: 250,
+      width: 140,
+      top: 275,
+      right: 1275
+    },
+    ['@media (max-width: 1120px)']: {
+      display: 'none'
     }
   }
 });
 
 function Hexagons(props) {
   const { classes } = props;
-  let kurec = undefined;
-
-  React.useEffect(() => {
-  
-
-    // kurec = anime({ targets: '#hexagon1', direction: 'alternate', autoplay: false, duration: 4000, opacity: ['1', '0'] });
-
-
-    // anime({
-    //   targets: '#hexagon1',
-    //   keyframes: [
-    //     // { translateY: -45, translateX: 85 },
-    //     { translateY: 0, translateX: 170 },
-    //     // { translateY: -45, translateX: 255, delay: 2000 },
-    //     { translateY: 0, translateX: 340, delay: 2000 }
-    //   ],
-    //   duration: 3000,
-    //   delay: 5000,
-    //   easing: 'easeOutElastic(1, .48)',
-    //   loop: true
-    // });
-
-    // anime({
-    //   targets: '#hexagon5',
-    //   keyframes: [
-    //     // { translateX: 85, translateY: 50 },
-    //     { translateX: 85, translateY: 150 },
-    //     // { translateY: 250, delay: 2000 },
-    //     {translateY: 300, translateX: 0, delay: 2000}
-    //   ],
-    //   duration: 3000,
-    //   delay: 5000,
-    //   easing: 'easeOutElastic(1, .48)',
-    //   loop: true
-    // });
-
-    // anime({
-    //   targets: '#hexagon4',
-    //   keyframes: [
-    //     // { translateX: -85, translateY: 45 },
-    //     { translateX: -170, translateY: 0 },
-    //     // { translateX: -255, translateY: 45, delay: 2000 },
-    //     { translateX: -340, translateY: 0, delay: 2000 },
-    //   ],
-    //   duration: 3000,
-    //   delay: 5000,
-    //   easing: 'easeOutElastic(1, .48)',
-    //   loop: true
-    // });
-
-    
-    // anime({
-    //   targets: '#hexagon6',
-    //   keyframes: [
-    //     // { translateX: -85, translateY: -50 },
-    //     { translateX: -85, translateY: -150},
-    //     // {translateY: -250, delay: 2000 },
-    //     {translateY: -300, translateX: 0, delay: 2000}
-    //     // {translateX: 0},
-    //     // {translateY: 0}
-    //   ],
-    //   duration: 3000,
-    //   delay: 5000,
-    //   easing: 'easeOutElastic(1, .48)',
-    //   loop: true
-    // });
-
-    // anime({
-    //   targets: '#hexagon7',
-    //   keyframes: [
-    //     { translateX: 85, translateY: -150 },
-    //     { translateX: 0, translateY: 0, delay: 2000 },
-
-    //   ],
-    //   duration: 3000,
-    //   delay: 5000,
-    //   easing: 'easeOutElastic(1, .48)',
-    //   loop: true
-    // });
-
-    // anime({
-    //   targets: '#hexagon8',
-    //   keyframes: [
-    //     { translateX: -85, translateY: 150 },
-    //     { translateX: 0, translateY: 0, delay: 2000 },
-
-    //   ],
-    //   duration: 3000,
-    //   delay: 5000,
-    //   easing: 'easeOutElastic(1, .48)',
-    //   loop: true
-    // });
-
-
-
-    // anime({
-    //   targets: '#hexagon1',
-    //   keyframes: [
-    //     {translateY: -50},
-    //     {translateX: 340},
-    //     {translateY: 0},
-    //     // {translateY: 0},
-    //     // {translateX: 0},
-    //   ],
-    //   duration: 3000,
-    //   delay: 2000,
-    //   easing: 'easeOutElastic(1, .48)',
-    //   loop: true
-    // });
-
-    // anime({
-    //   targets: '#hexagon5',
-    //   keyframes: [
-    //     {translateX: 90},
-    //     {translateY: 250},
-    //     {translateY: 300, translateX: 0},
-    //     // {translateX: 0},
-    //     // {translateY: 0}
-    //   ],
-    //   duration: 3000,
-    //   delay: 2000,
-    //   easing: 'easeOutElastic(1, .48)',
-    //   loop: true
-    // });
-
-    // anime({
-    //   targets: '#hexagon4',
-    //   keyframes: [
-    //     {translateY: 50},
-    //     {translateX: -250},
-    //     {translateY: 0, translateX: -340 },
-    //     // {delay: 300},
-    //     // {translateX: 0},
-    //     // {translateY: 0}
-    //   ],
-    //   duration: 3000,
-    //   delay: 2000,
-    //   easing: 'easeOutElastic(1, .48)',
-    //   loop: true
-    // });
-
-    
-    // anime({
-    //   targets: '#hexagon6',
-    //   keyframes: [
-    //     {translateX: -90},
-    //     {translateY: -250},
-    //     {translateY: -300, translateX: 0 },
-    //     // {translateX: 0},
-    //     // {translateY: 0}
-    //   ],
-    //   duration: 3000,
-    //   delay: 2000,
-    //   easing: 'easeOutElastic(1, .48)',
-    //   loop: true
-    // });
-
-
-  }, []);
-
-  // React.useEffect(() => {
-  //   window.addEventListener('scroll', function(e) {
-  //      console.log(window.scrollX, window.scrollY);
-
-  //      if (window.scrollY < 400) {
-  //        kurec.seek(0);
-  //      } if (window.scrollY >= 400 && window.scrollY <= 500) {
-  //        const seekAnimation = kurec.duration - ((500 - window.scrollY) / 100) * kurec.duration;
-  //        console.log('seek', seekAnimation, `500 - ${window.scrollY} / 100 * ${kurec.duration}`);
-  //        kurec.seek(seekAnimation);
-  //      }
-  //   });
-
-  // }, []);
-
-
   return (
     <div className={classes.root}>
       <Hexagon id="hexagon1" svgClass={classes.svgHexagon1} polygonClass={classes.svgPolygon} />

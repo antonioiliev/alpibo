@@ -26,32 +26,22 @@ const styles = (theme) => ({
     flexDirection: 'column',
     alignItems: 'flex-start',
     width: '100%',
-    maxWidth: '1200px',
+    maxWidth: '2100px',
     padding: '0px 70px 0px 70px',
     [theme.breakpoints.down('md')]: {
       padding: '0px 20px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center'
     }
   },
   flexRow: {
     display: 'flex', 
     flexFlow: 'row wrap', 
     justifyContent: 'space-between', 
-    width: '100%'
-  },
-  heroH2: {
-    color: theme.palette.primary.dark,
-    fontSize: '96px',
-    fontFamily: 'Advent Pro',
-    fontWeight: 400,
-    textTransform: 'uppercase',
-    lineHeight: '1em',
-    marginBottom: 0,
-    zIndex: 3,
-    [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '55px',
-    },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '40px',
+    width: '100%',
+    ['@media (max-width: 450px)']: {
+      justifyContent: 'center'
     }
   },
   heroP: {
@@ -89,6 +79,12 @@ const styles = (theme) => ({
     fontWeight: 900,
     zIndex: 10,
     textShadow: '2px 0 #fff, 0 -2px #fff, 2px 0 #fff, 2px 2px #fff, 2px 2px #fff, -2px -2px #fff, -2px 2px #fff, 2px -2px #fff',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '60px'
+    },
+    ['@media (max-width: 310px)']: {
+      fontSize: '42px'
+    }
   },
   techstackSpan: {
     color: theme.palette.primary.light,

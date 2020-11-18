@@ -72,6 +72,14 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 2,
     '&:hover': {
       color: '#333'
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '18px'
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '16px',
+      padding: '10px',
+      top: '-50px'
     }
   }
 }));
@@ -86,7 +94,7 @@ export default function HeroSignUpButton(props) {
             <rect className={classes.shape1} height="60" width="300" />
             <rect className={classes.shape2} height="60" width="300" />
           </svg>
-          <a href="#" className={classes.buttonText}>GET IN TOUCH</a>
+          <a href="#contact-us" className={classes.buttonText}>GET IN TOUCH</a>
         </div>
     </div>
   );

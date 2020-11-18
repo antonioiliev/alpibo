@@ -39,7 +39,7 @@ const styles = (theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '0px 70px',
+    padding: '0px',
     [theme.breakpoints.up('md')]: {
       flexBasis: '90%'
     },
@@ -53,37 +53,68 @@ const styles = (theme) => ({
     flexFlow: 'row wrap', 
     justifyContent: 'center', 
     width: '100%',
-    maxWidth: '1600px'
+    maxWidth: '1600px',
+    [theme.breakpoints.down('md')]: {
+      '&:last-child': {
+        position: 'relative',
+        top: '-90px'
+      }
+    },
+    [theme.breakpoints.down('sm')]: {
+      '&:last-child': {
+        position: 'relative',
+        top: '-20px'
+      }
+    }
   },
   flexRowAlternate: {
     position: 'relative',
-    top: '-80px'
+    top: '-80px',
+    [theme.breakpoints.down('lg')]: {
+      top: '-50px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      top: '-40px'
+    }
+  },
+  flexRowAlternateSecond: {
+    position: 'relative',
+    top: '-160px',
+    [theme.breakpoints.down('lg')]: {
+      top: '-100px'
+    }
   },
   heroH2: {
     color: theme.palette.primary.main,
     fontSize: '96px',
-    marginLeft: '100px',
+    margin: '180px 0px 40px 0px',
     fontFamily: 'Advent Pro',
     fontWeight: 400,
     textTransform: 'uppercase',
     lineHeight: '1em',
-    marginBottom: 0,
     zIndex: 3,
-    [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '55px',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '65px',
+      margin: '150px 0 30px 0'
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: '40px',
+      fontSize: '55px',
+      textAlign: 'center',
+      margin: '100px 0 30px 0'
     }
   },
   heroP: {
-    color: theme.palette.primary.light,
+    color: theme.palette.primary.dark,
+    textAlign: 'center',
+    maxWidth: 800,
     fontSize: '22px',
     fontWeight: 500,
     marginTop: '0px',
+    marginBottom: '120px',
     padding: '0px',
     [theme.breakpoints.down('sm')]: {
       fontSize: '18px',
+      marginBottom: '50px'
     }
   },
   svg: {
@@ -128,13 +159,9 @@ function Portfolio(props) {
   return (
     <div id="portfolio" className={classes.root}>
         <div className={classes.container}>
-            <h2 className={classes.heroH2}><span className={classes.boldSpan}>Our</span> Portfolio</h2>
+            <h2 className={classes.heroH2}><span className={classes.boldSpan}>Our Portfolio</span></h2>
 
             <p className={classes.heroP}>All of our projects are created with your and your customers` expectations in mind. Excellent user experience and elegance is at the forefront of everything we do.</p>
-          {/* 
-            <svg style={{ position: 'absolute', top: '2500', right: 50, zIndex: 2 }} width="500" height="500" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#FF0066" d="M26.9,-43.2C39.9,-39,59,-42,71,-36C83,-30,87.9,-15,86.1,-1C84.3,13,75.9,26,63.8,31.8C51.7,37.6,35.9,36.2,24.7,42.8C13.4,49.4,6.7,63.9,-4.4,71.5C-15.4,79.1,-30.9,79.7,-40,71.9C-49.2,64.1,-52,47.9,-53.6,34.5C-55.1,21.1,-55.4,10.6,-59.4,-2.3C-63.4,-15.2,-71.1,-30.3,-67.8,-40.7C-64.5,-51.1,-50.2,-56.7,-37.1,-60.8C-24,-64.9,-12,-67.6,-2.5,-63.2C6.9,-58.8,13.9,-47.4,26.9,-43.2Z" transform="translate(100 100)" />
-            </svg> */}
             <svg xmlns="http://www.w3.org/2000/svg" id="svgDivider" className={classes.svgDivider} viewBox="0 0 1440 320"><path fill-opacity="1" d="M0,256L60,218.7C120,181,240,107,360,69.3C480,32,600,32,720,37.3C840,43,960,53,1080,53.3C1200,53,1320,43,1380,37.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
 
 
@@ -157,6 +184,7 @@ function Portfolio(props) {
                 backgroundImage={Novagel1BackgroundImage} 
                 logo={Novagel1Logo} 
                 heading="Novagel1"
+                wrapOnMobile
                 link="https://novagel1.com"
               />
             </div>
@@ -179,12 +207,13 @@ function Portfolio(props) {
               />
             </div>
 
-            <div className={clsx(classes.flexRow, classes.flexRowAlternate)} style={{ top: '-160px' }}>
+            <div className={clsx(classes.flexRow, classes.flexRowAlternateSecond)}>
               <PortfolioItem 
                 backgroundImage={MyChocolatierBackgroundImage} 
                 logo={MyChocolatierLogo} 
                 heading="MY Chocolatier"
                 link="https://mychocolatier.bg"
+                wrapOnMobile70
               />
 
               <PortfolioItem 
@@ -192,6 +221,7 @@ function Portfolio(props) {
                 logo={PrettyCowLogo} 
                 heading="PrettyCow"
                 link="https://prettycow.bg"
+                last
               />
 
               <PortfolioItem 
@@ -199,6 +229,7 @@ function Portfolio(props) {
                 logo={DalioLogo} 
                 heading="Dalio"
                 link="https://dalio.io"
+                last
               />
             </div>
         </div>

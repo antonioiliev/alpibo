@@ -9,18 +9,31 @@ import HeaderMenu from './components/HeaderMenu';
 
 const styles = (theme) => ({
   appbar: {
-    height: '70px',
-    background: theme.palette.primary.dark,
+    background: theme.palette.primary.light,
+    [theme.breakpoints.up('md')]: {
+      padding: '0px 70px'
+    }
   },
   title: {
     fontSize: 24,
     textTransform: 'uppercase',
     fontWeight: 300,
     marginLeft: '20px',
-    color: theme.palette.primary.light
+    color: theme.palette.primary.dark
   },
   toolbar: {
-    justifyContent: 'space-between',
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    width: '100%',
+    maxWidth: '2000px',
+    margin: 'auto',
+    [theme.breakpoints.down('lg')]: {
+      flexBasis: '90%'
+    },
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'space-between',
+      
+    }
   },
   svgLineDiv: {
     background: theme.palette.primary.dark,
@@ -29,10 +42,16 @@ const styles = (theme) => ({
     background: theme.palette.primary.dark,
   },
   svgLine: {
-    stroke: theme.palette.secondary.light, 
+    stroke: theme.palette.secondary.dark, 
     strokeWidth: 10,
     strokeDasharray: 100,
     strokeDashoffset: 100,
+  },
+  logo: {
+    maxWidth: '50px',
+    [theme.breakpoints.down('md')]: {
+      maxWidth: '50px'
+    }
   }
 });
 
@@ -51,7 +70,7 @@ const Header = props => {
 
   return (
     <React.Fragment>
-      <AppBar position="relative" className={classes.appbar}>
+      <AppBar position="fixed" elevation={2} className={classes.appbar}>
         <Toolbar className={classes.toolbar}>
           <Link
             variant="h6"
@@ -60,7 +79,7 @@ const Header = props => {
             className={classes.title}
             href={routes.HOME}
           >
-            {'ALPIBO'}
+            <img className={classes.logo} src={process.env.PUBLIC_URL + '/logo.svg'} alt="Alpibo logo" />
           </Link>
           <HeaderMenu />
         </Toolbar>

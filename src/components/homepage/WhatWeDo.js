@@ -27,19 +27,27 @@ const styles = (theme) => ({
     flexDirection: 'column',
     alignItems: 'flex-start',
     padding: '50px 70px 0px 70px',
+    maxWidth: '2100px',
     [theme.breakpoints.up('md')]: {
-      flexBasis: '90%'
+      flexBasis: '100%'
     },
     [theme.breakpoints.down('md')]: {
-      flexBasis: '100%',
-      padding: '0px 20px'
+      flexBasis: '90%',
+      padding: '80px 20px 0px 20px',
+      alignItems: 'center'
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: 0
     }
   },
   flexRow: {
     display: 'flex', 
     flexFlow: 'row wrap', 
-    justifyContent: 'space-evenly', 
-    width: '100%'
+    justifyContent: 'space-between', 
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center'
+    }
   },
   heroH2: {
     color: theme.palette.primary.dark,
@@ -55,6 +63,7 @@ const styles = (theme) => ({
     },
     [theme.breakpoints.down('sm')]: {
       fontSize: '40px',
+      textAlign: 'center'
     }
   },
   heroP: {
@@ -82,18 +91,6 @@ const styles = (theme) => ({
     '& > img': {
       maxWidth: 100
     }
-  },
-  techstackH2: {
-    color: theme.palette.primary.dark, 
-    fontSize: '48px',
-    marginTop: '100px',
-    zIndex: 10,
-  },
-  techstackSpan: {
-    color: theme.palette.primary.light,
-    background: theme.palette.secondary.main,
-    padding: '0px 10px',
-    fontWeight: 200
   },
   svg: {
     position: 'relative',
@@ -139,10 +136,6 @@ const styles = (theme) => ({
     fontWeight: 900,
     color: theme.palette.secondary.light,
     textShadow: '-2px 0 #8224e3, 0 -2px #8224e3, 2px 0 #8224e3, 0 2px #8224e3, 2px 2px #8224e3, -2px -2px #8224e3, -2px 2px #8224e3, 2px -2px #8224e3, 6px 6px #8224e3'
-  },
-  techStackDiv: {
-    width: '100%',
-    background: theme.palette.secondary.main
   }
 });
 
@@ -152,7 +145,7 @@ function WhatWeDo(props) {
   return (
     <div id="services" className={classes.root}>
       <div className={classes.container}>
-        <h2 className={classes.heroH2}>What <span className={classes.boldSpan}>we</span> do</h2>
+        <h2 className={classes.heroH2}><span className={classes.boldSpan}>What we do</span></h2>
         {/* <div>
           <svg className={classes.svg} viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="0" y1="0" x2="100%" y2="0" className={classes.svgLine}></line>

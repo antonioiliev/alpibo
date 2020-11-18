@@ -14,29 +14,6 @@ const Hexagon = props => {
     anime({ targets: `#${props.id}`, translateY: [getRandomIntInclusive(-1200, 1200), 0], translateX: [getRandomIntInclusive(-1200, 1200), 0], opacity: ['0', '1'], delay: getRandomIntInclusive(500, 900) });
   }, []);
 
-  
-  // React.useEffect(() => {
-  //   window.addEventListener('scroll', function(e) {
-  //     if (props.id === 'hexagon7') {
-  //       console.log('exit animation', exitAnimation);
-  //       console.log(window.scrollX, window.scrollY);
-
-  //       if (window.scrollY < 400) {
-  //         exitAnimation.seek(0);
-  //       } else if (window.scrollY >= 400 && window.scrollY <= 500) {
-  //         const seekAnimation = exitAnimation.duration - ((500 - window.scrollY) / 100) * exitAnimation.duration;
-  //         console.log('seek', seekAnimation, `500 - ${window.scrollY} / 100 * ${exitAnimation.duration}`);
-  //         exitAnimation.seek(seekAnimation);
-  //       }
-  //     }
-  //   });
-
-  //   if (props.id === 'hexagon7') {
-  //     exitAnimation = anime({ targets: '#hexagon7', direction: 'alternate', autoplay: false, duration: 4000, opacity: ['1', '0'] });
-  //   }
-
-
-  // }, []);
 
   return (
     <svg id={props.id} className={props.svgClass} viewBox="0 0 120 210" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

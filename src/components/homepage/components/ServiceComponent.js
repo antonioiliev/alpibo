@@ -32,9 +32,17 @@ const styles = (theme) => ({
     alignItems: 'center',
     justifyContent: 'flex-start',
     maxWidth: 300,
-    paddingTop: 50,
+    paddingTop: '50px 20px 0px 20px',
     '& > img': {
-      width: 100
+      width: 100,
+      ['@media (max-width: 439px)']: {
+        width: '70%'
+      }
+    },
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '90%',
+      minWidth: '200px',
+      marginTop: 70
     }
   }
 });

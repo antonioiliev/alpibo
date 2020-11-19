@@ -5,6 +5,7 @@ import NodeJSLogo from '../../../media/logo/nodejs-white.svg';
 import ReactLogo from '../../../media/logo/react.svg';
 import PHPLogo from '../../../media/logo/php.svg';
 import WordPressLogo from '../../../media/logo/wordpress.svg';
+import MagentoLogo from '../../../media/logo/magento.svg';
 import ServiceComponent from './ServiceComponent';
 
 const styles = (theme) => ({
@@ -157,26 +158,37 @@ const TechStack = props => {
         <div className={classes.flexRow}>
             <ServiceComponent
                 description='JavaScript'
+                id='javascript-service-component'
                 image={JSLogo}
                 color="white"
             />
             <ServiceComponent
                 description='NodeJS'
+                id='nodejs-service-component'
                 image={NodeJSLogo}
                 color="white"
             />
             <ServiceComponent
                 description='ReactJS/React Native'
+                id='react-service-component'
                 image={ReactLogo}
                 color="white"
             />
             <ServiceComponent
                 description='PHP'
+                id='php-service-component'
                 image={PHPLogo}
                 color="white"
             />
             <ServiceComponent
+                description='Magento Development'
+                id='magento-service-component'
+                image={MagentoLogo}
+                color="white"
+            />
+            <ServiceComponent
                 description='WordPress Development'
+                id='wp-service-component'
                 image={WordPressLogo}
                 color="white"
             />

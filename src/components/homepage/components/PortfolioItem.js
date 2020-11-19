@@ -126,7 +126,7 @@ const PortfolioItem = props => {
         <div id='hexagonClip' style={{ backgroundImage: `url(${backgroundImage})` }} className={classes.hexagonClip}>
             <div id="hexagonClipOverlay" className={classes.hexagonClipOverlay}>
                 <a href={link} target="_blank" className={classes.hexagonLink} rel="noopener noreferrer">
-                <img id='hexagonLogo' className={classes.hexagonLogo} src={logo} alt={heading} />
+                <img id='hexagonLogo' loading="lazy" className={classes.hexagonLogo} src={logo} alt={heading} />
                 <h2 id='hexagonH2' className={classes.hexagonClipH2}>{heading}</h2>
                 </a>
             </div>

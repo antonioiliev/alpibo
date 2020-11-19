@@ -1,17 +1,6 @@
 import React from 'react';
-import anime from 'animejs/lib/anime.es.js';
 
 const Hexagon = props => {
-  const getRandomIntInclusive = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive 
-  }
-
-  React.useEffect(() => {
-    anime({ targets: `#${props.id}`, translateY: [getRandomIntInclusive(-1200, 1200), 0], translateX: [getRandomIntInclusive(-1200, 1200), 0], opacity: ['0', '1'], delay: getRandomIntInclusive(500, 900) });
-  }, [props.id]);
-
 
   return (
     <svg id={props.id} className={props.svgClass} viewBox="0 0 120 210" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

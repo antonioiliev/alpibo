@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import App from './containers/App';
 // import * as serviceWorker from './serviceWorker';
@@ -46,11 +46,11 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

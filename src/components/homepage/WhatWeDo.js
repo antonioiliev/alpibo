@@ -149,26 +149,31 @@ function WhatWeDo(props) {
 
         <div className={classes.flexRow}>
           <ServiceComponent 
+            id="consultation-service-component"
             heading='Consultation'
             description='Don`t worry if you feel lost. We are here to discuss your needs and will give advice as to what the best course of action for you business will be.'
             image={BusinessConsultingSVG}
           />
           <ServiceComponent 
+            id="company-websites-service-component"
             heading='Company Websites'
             description='We will design and develop a professional corporate website that represents you and your company`s culture'
             image={WebsiteSVG}
           />
           <ServiceComponent 
+            id="mobile-apps-service-component"
             heading='Mobile Applications (Android/iOS)'
             description='If your business needs dictate it, we can plan and develop a beautiful and functional Android and/or iOS app'
             image={MobileAppSVG}
           />
           <ServiceComponent 
+            id="desktop-apps-service-component"
             heading='Desktop Applications (Windows/MacOS)'
             description='Whether it is an automation system, a bespoke ERP system or anything in between, we will be more than happy to create the perfect solution for you'
             image={DesktopAppSVG}
           />
           <ServiceComponent 
+            id="ecomm-service-component"
             heading='ECommerce Solutions'
             description='Do not lag behind. In this day and age, having an e-commerce business is crucial. We specialise in building custom software to fit your needs or use a platform such as WordPress (WooCommerce)'
             image={ECommerceSVG}

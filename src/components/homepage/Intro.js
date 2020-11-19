@@ -136,7 +136,7 @@ const styles = (theme) => ({
     fontSize: '22px',
     border: `1px solid ${theme.palette.secondary.main}`,
     borderRadius: '3px',
-    transition: 'all 0.5s',
+    // transition: 'all 0.5s',
     '&:hover': {
       background: '#fff',
       color: theme.palette.secondary.main
@@ -149,19 +149,17 @@ const styles = (theme) => ({
 
 function Intro(props) {
   const { classes } = props;
-  const headingRef = React.useRef(null);
-  const descriptionRef = React.useRef(null);
 
   return (
     <div className={classes.root}>
       <div className={classes.container}>
         
-        <h2 ref={headingRef} className={classes.heroH2}>Let`s <span className={classes.boldSpan}>design, develop</span> and <span className={classes.boldSpan}>grow</span> your 
+        <h2 className={classes.heroH2}>Let`s <span className={classes.boldSpan}>design, develop</span> and <span className={classes.boldSpan}>grow</span> your 
         <span id="web-presence" style={{ display: 'block' }}>
           web presence
         </span></h2>
 
-        <p ref={descriptionRef} className={classes.heroP}>We rely on our expertise to deliver eye-catching and easy to use software solutions that will elevate your online presence and drive more sales</p>
+        <p className={classes.heroP}>Founded in 2017, we rely on our expertise to deliver eye-catching and easy to use software solutions that will elevate your online presence and drive more sales</p>
         <a href="#contact-us" className={classes.buttonText}>GET IN TOUCH</a>        
         
         <Hexagons />

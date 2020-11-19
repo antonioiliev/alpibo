@@ -27,7 +27,7 @@ const styles = (theme) => ({
     link: {
         color: theme.palette.primary.dark,
         padding: '20px 20px',
-        fontSize: '24px',
+        fontSize: '20px',
         textTransform: 'uppercase',
         transition: 'all 0.5s ease-out',
         '&:hover': {
@@ -36,7 +36,7 @@ const styles = (theme) => ({
             textDecoration: 'none'
         },
         [theme.breakpoints.up('md')]: {
-            fontSize: '20px',
+            fontSize: '18px',
         },
         [theme.breakpoints.down('md')]: {
             margin: '0px',

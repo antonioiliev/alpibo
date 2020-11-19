@@ -4,7 +4,6 @@ import Link from '@material-ui/core/Link';
 import AppBar from './components/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import routes from '../../constants/routes.json';
-import anime from 'animejs/lib/anime.es.js';
 import HeaderMenu from './components/HeaderMenu';
 
 const styles = (theme) => ({
@@ -19,7 +18,8 @@ const styles = (theme) => ({
     textTransform: 'uppercase',
     fontWeight: 300,
     marginLeft: '20px',
-    color: theme.palette.primary.dark
+    color: theme.palette.primary.dark,
+    display: 'flex'
   },
   toolbar: {
     display: 'flex',
@@ -27,46 +27,29 @@ const styles = (theme) => ({
     width: '100%',
     maxWidth: '2000px',
     margin: 'auto',
+    padding: '0px 50px',
     [theme.breakpoints.down('lg')]: {
-      flexBasis: '90%'
+      flexBasis: '90%',
+      padding: '0px 50px',
     },
     [theme.breakpoints.down('md')]: {
       justifyContent: 'space-between',
-      
+      padding: '0px 0px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: '0px 20px'
     }
   },
-  svgLineDiv: {
-    background: theme.palette.primary.dark,
-  },
-  svg: {
-    background: theme.palette.primary.dark,
-  },
-  svgLine: {
-    stroke: theme.palette.secondary.dark, 
-    strokeWidth: 10,
-    strokeDasharray: 100,
-    strokeDashoffset: 100,
-  },
   logo: {
-    maxWidth: '50px',
+    maxWidth: '120px',
     [theme.breakpoints.down('md')]: {
-      maxWidth: '50px'
+      maxWidth: '80px'
     }
   }
 });
 
 const Header = props => {
   const { classes } = props;
-
-  React.useEffect(() => {
-    anime({
-      targets: ['#svgBorder line'],
-      strokeDashoffset: [100, 0],
-      loop: false,
-      direction: 'alternate',
-      easing: 'easeInOutExpo'
-    });
-  }, []);
 
   return (
     <React.Fragment>
@@ -79,7 +62,7 @@ const Header = props => {
             className={classes.title}
             href={routes.HOME}
           >
-            <img className={classes.logo} src={process.env.PUBLIC_URL + '/logo.svg'} alt="Alpibo logo" />
+            <img loading="lazy" className={classes.logo} src={process.env.PUBLIC_URL + '/logo_name.svg'} alt="Alpibo logo" />
           </Link>
           <HeaderMenu />
         </Toolbar>

@@ -92,7 +92,7 @@ function Partners(props) {
             <h2 className={classes.heroH2}><span className={classes.boldSpan}>Our Partners</span></h2>
 
             <div className={classes.contentDiv}>
-                <img className={classes.partnerLogo} src={BusinessTrendLogo} alt="Business Trend"/>
+                <img loading="lazy" className={classes.partnerLogo} src={BusinessTrendLogo} alt="Business Trend"/>
                 <div style={{ padding: '0px 20px' }}>
                     <h3>BusinessTrend</h3>
                     <p>Business Trend is an agency that specializes in Google Ads, Facebook Ads and SEO optimisation. These experts have time and time again shown results for us and our clients.</p>

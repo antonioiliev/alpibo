@@ -31,31 +31,38 @@ const styles = (theme) => ({
     flexDirection: 'column', 
     alignItems: 'center',
     justifyContent: 'flex-start',
-    maxWidth: 300,
+    // maxWidth: 300,
+    width: '350px',
     padding: '50px 20px 0px 20px',
-    '& > img': {
-      width: 100,
-      [theme.breakpoints.down('sm')]: {
-        width: '130px'
-      },
-      ['@media (max-width: 439px)']: {
-        width: '150px'
-      }
-    },
     [theme.breakpoints.down('sm')]: {
+      width: '100%',
       maxWidth: '90%',
       minWidth: '200px',
       marginTop: 70
     }
+  },
+  img: {
+    [theme.breakpoints.down('sm')]: {
+      width: '130px'
+    },
+    ['@media (max-width: 439px)']: {
+      width: '150px'
+    }
+  },
+  imgNormalWidth: {
+    width: 100
+  },
+  imgNodeJS: {
+    width: 160
   }
 });
 
 const ServiceComponent = props => {
-  const { classes, heading, description, image, color } = props;
+  const { id, classes, heading, description, image, color } = props;
 
   return (
-    <div className={classes.serviceDiv}>
-        <img src={image} alt={heading} />
+    <div id={id} className={classes.serviceDiv}>
+        <img loading="lazy" src={image} className={clsx(classes.img, id == 'nodejs-service-component' ? classes.imgNodeJS : classes.imgNormalWidth)} alt={heading} />
         {heading !== undefined && (
           <h5 className={classes.servicesH5}>{heading}</h5>
         )}

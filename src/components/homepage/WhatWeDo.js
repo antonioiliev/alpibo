@@ -123,7 +123,6 @@ const styles = (theme) => ({
     '& svg': {
       position: 'relative',
       display: 'block',
-      width: '100%',
       height: '550px',
       width: 'calc(192% + 1.3px)',
       transform: 'rotateY(180deg)',
@@ -146,11 +145,6 @@ function WhatWeDo(props) {
     <div id="services" className={classes.root}>
       <div className={classes.container}>
         <h2 className={classes.heroH2}><span className={classes.boldSpan}>What we do</span></h2>
-        {/* <div>
-          <svg className={classes.svg} viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="0" x2="100%" y2="0" className={classes.svgLine}></line>
-          </svg>
-        </div> */}
         <p className={classes.heroP}>We offer an all-round service so your business`s online presence is covered from all aspects. Our mission is to elevate your online presence by delivering a quality product, continually evaluate our work and improve it at no extra cost.</p>
 
         <div className={classes.flexRow}>

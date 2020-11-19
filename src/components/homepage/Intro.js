@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import HeroSignUpButton from './components/HeroSignUpButton';
 import Hexagons from './components/Hexagons';
 
 const styles = (theme) => ({
@@ -125,6 +124,26 @@ const styles = (theme) => ({
     strokeWidth: 37,
     strokeLinecap: 'round',
     strokeLinejoin: 'round'
+  },
+  buttonText: {
+    background: theme.palette.secondary.main,
+    color: '#fff',
+    width: '300px',
+    padding: '15px',
+    textAlign: 'center',
+    fontWeight: 600,
+    textDecoration: 'none',
+    fontSize: '22px',
+    border: `1px solid ${theme.palette.secondary.main}`,
+    borderRadius: '3px',
+    transition: 'all 0.5s',
+    '&:hover': {
+      background: '#fff',
+      color: theme.palette.secondary.main
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '18px'
+    }
   }
 });
 
@@ -132,7 +151,6 @@ function Intro(props) {
   const { classes } = props;
   const headingRef = React.useRef(null);
   const descriptionRef = React.useRef(null);
-  const ctaRef = React.useRef(null);
 
   return (
     <div className={classes.root}>
@@ -144,7 +162,8 @@ function Intro(props) {
         </span></h2>
 
         <p ref={descriptionRef} className={classes.heroP}>We rely on our expertise to deliver eye-catching and easy to use software solutions that will elevate your online presence and drive more sales</p>
-        <HeroSignUpButton ctaRef={ctaRef} />
+        <a href="#contact-us" className={classes.buttonText}>GET IN TOUCH</a>        
+        
         <Hexagons />
       </div>
     </div>

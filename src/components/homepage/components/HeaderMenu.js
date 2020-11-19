@@ -28,6 +28,7 @@ const styles = (theme) => ({
         color: theme.palette.primary.dark,
         padding: '20px 20px',
         fontSize: '24px',
+        textTransform: 'uppercase',
         transition: 'all 0.5s ease-out',
         '&:hover': {
             background: theme.palette.secondary.main,

@@ -4,9 +4,7 @@ import BusinessTrendLogo from '../../media/logo/business-trend.png';
 
 const styles = (theme) => ({
   root: {
-    // background: theme.palette.primary.dark,
     background: '#fff',
-    // background: theme.palette.primary.dark,
     zIndex: 20,
     display: 'flex',
     maxWidth: '100%',
@@ -39,7 +37,6 @@ const styles = (theme) => ({
     maxWidth: '700px',
     display: 'flex',
     alignItems: 'center', 
-    margin: 'auto', 
     borderRadius: '5px', 
     background: '#f2f2f2', 
     padding: '20px', 
@@ -99,7 +96,7 @@ function Partners(props) {
                 <div style={{ padding: '0px 20px' }}>
                     <h3>BusinessTrend</h3>
                     <p>Business Trend is an agency that specializes in Google Ads, Facebook Ads and SEO optimisation. These experts have time and time again shown results for us and our clients.</p>
-                    <a href="#" target="_blank">Visit website</a>
+                    <a href="http://business-trend.net/" target="_blank" rel="noopener noreferrer">Visit website</a>
                 </div>
             </div>
         </div>

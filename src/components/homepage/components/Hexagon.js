@@ -2,8 +2,6 @@ import React from 'react';
 import anime from 'animejs/lib/anime.es.js';
 
 const Hexagon = props => {
-  let exitAnimation = React.useRef(null);
-
   const getRandomIntInclusive = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -12,7 +10,7 @@ const Hexagon = props => {
 
   React.useEffect(() => {
     anime({ targets: `#${props.id}`, translateY: [getRandomIntInclusive(-1200, 1200), 0], translateX: [getRandomIntInclusive(-1200, 1200), 0], opacity: ['0', '1'], delay: getRandomIntInclusive(500, 900) });
-  }, []);
+  }, [props.id]);
 
 
   return (

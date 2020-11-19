@@ -32,11 +32,14 @@ const styles = (theme) => ({
     alignItems: 'center',
     justifyContent: 'flex-start',
     maxWidth: 300,
-    paddingTop: '50px 20px 0px 20px',
+    padding: '50px 20px 0px 20px',
     '& > img': {
       width: 100,
+      [theme.breakpoints.down('sm')]: {
+        width: '130px'
+      },
       ['@media (max-width: 439px)']: {
-        width: '70%'
+        width: '150px'
       }
     },
     [theme.breakpoints.down('sm')]: {
@@ -52,11 +55,11 @@ const ServiceComponent = props => {
 
   return (
     <div className={classes.serviceDiv}>
-        <img src={image} alt="" />
+        <img src={image} alt={heading} />
         {heading !== undefined && (
           <h5 className={classes.servicesH5}>{heading}</h5>
         )}
-        <p className={classes.servicesP, color !== undefined ? classes.colorLight : classes.colorDark}>{description}</p>
+        <p className={clsx(classes.servicesP, color && classes.colorLight, !color && classes.colorDark)}>{description}</p>
     </div>
   );
 }

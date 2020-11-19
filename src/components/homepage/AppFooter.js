@@ -154,9 +154,9 @@ export default function AppFooter() {
 
       <div id="contact-us" className={classes.container}>
         <a href="mailto:antonio@alpibo.com">antonio@alpibo.com</a>
-        <a href="https://www.facebook.com/alpibowebdesign" target="_blank">Follow on Facebook</a>
-        <a href="https://twitter.com/AlpiboA" target="_blank">Follow on Twitter</a>
-        <a href="https://github.com/antonioiliev" target="_blank">Visit GitHub</a>
+        <a href="https://www.facebook.com/alpibowebdesign" target="_blank" rel="noopener noreferrer">Follow on Facebook</a>
+        <a href="https://twitter.com/AlpiboA" target="_blank" rel="noopener noreferrer">Follow on Twitter</a>
+        <a href="https://github.com/antonioiliev" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
       </div>
       <div className={classes.copyrightsDiv}>
         <div className={classes.footerLinks}>

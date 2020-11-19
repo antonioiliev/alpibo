@@ -123,7 +123,6 @@ const styles = (theme) => ({
     '& svg': {
       position: 'relative',
       display: 'block',
-      width: '100%',
       height: '350px',
       width: 'calc(192% + 1.3px)',
       transform: 'rotateY(180deg)',

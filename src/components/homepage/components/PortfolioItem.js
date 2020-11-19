@@ -119,13 +119,13 @@ const styles = (theme) => ({
 });
 
 const PortfolioItem = props => {
-  const { classes, backgroundImage, logo, heading, link, alternate, wrapOnMobile, wrapOnMobile70, last } = props;
+  const { classes, backgroundImage, logo, heading, link, wrapOnMobile, wrapOnMobile70, last } = props;
 
   return (
     <div className={clsx(classes.hexagonClipParent, wrapOnMobile && classes.wrapOnMobile, wrapOnMobile70 && classes.wrapOnMobile70, last && classes.last)}>
         <div id='hexagonClip' style={{ backgroundImage: `url(${backgroundImage})` }} className={classes.hexagonClip}>
             <div id="hexagonClipOverlay" className={classes.hexagonClipOverlay}>
-                <a href={link} target="_blank" className={classes.hexagonLink}>
+                <a href={link} target="_blank" className={classes.hexagonLink} rel="noopener noreferrer">
                 <img id='hexagonLogo' className={classes.hexagonLogo} src={logo} alt={heading} />
                 <h2 id='hexagonH2' className={classes.hexagonClipH2}>{heading}</h2>
                 </a>

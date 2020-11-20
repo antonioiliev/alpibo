@@ -34,7 +34,8 @@ const styles = (theme) => ({
     [theme.breakpoints.down('md')]: {
       flexBasis: '90%',
       padding: '80px 20px 0px 20px',
-      alignItems: 'center'
+      alignItems: 'center',
+      marginTop: 0
     },
     [theme.breakpoints.down('sm')]: {
       paddingTop: 0

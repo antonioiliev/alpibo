@@ -161,7 +161,7 @@ export default function AppFooter() {
       <div className={classes.copyrightsDiv}>
         <div className={classes.footerLinks}>
           <a href="/privacy-policy">Privacy Policy</a>|
-          <a href="/blog">Blog</a>
+          <a href="https://blog.alpibo.com">Blog</a>
         </div>
         <p className={classes.p}>COPYRIGHT © ALPIBO {new Date().getFullYear()}. All rights reserved</p>
 

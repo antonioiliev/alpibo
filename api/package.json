@@ -1,0 +1,29 @@
+{
+  "name": "alpibo-server",
+  "version": "1.0.0",
+  "description": "alpibo",
+  "main": "index.js",
+  "author": "Antonio Iliev <antonio@alpibo.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "scripts": {
+    "express": "nodemon --exec babel-node index.js",
+    "build": "npx webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "nodemon": "^2.0.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}

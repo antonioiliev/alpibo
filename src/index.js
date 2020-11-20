@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
-
+import { BrowserRouter } from 'react-router-dom';
 import App from './containers/App';
-// import * as serviceWorker from './serviceWorker';
-
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { green, red } from '@material-ui/core/colors';
@@ -46,11 +43,11 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

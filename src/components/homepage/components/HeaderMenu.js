@@ -83,7 +83,7 @@ const menuItems = [
     },
     {
         title: 'Blog',
-        href: '/blog'
+        href: 'https://blog.alpibo.com'
     }
 ];
 

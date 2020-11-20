@@ -38,7 +38,7 @@ const styles = (theme) => ({
       width: '100%',
       maxWidth: '90%',
       minWidth: '200px',
-      marginTop: 70
+      marginTop: 30
     }
   },
   img: {

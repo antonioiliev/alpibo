@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import routes from '../constants/routes.json';
 import HomePage from './HomePage';
 import PrivacyPolicyPage from './PrivacyPolicy';
+import ErrorPage from './404';
 import Cookies from 'js-cookie';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -74,7 +75,8 @@ const App = props => {
     <div className="App">
       <Switch>
         <Route exact path={routes.HOME} component={HomePage} />
-        <Route exact path={routes.PRIVACY_POLICY} component={PrivacyPolicyPage} />
+        <Route path={routes.PRIVACY_POLICY} component={PrivacyPolicyPage} />
+        <Route path="*" component={ErrorPage} />
       </Switch>
       {!hasValidCookie && (
         <div className={classes.cookieDiv}>

@@ -20,6 +20,9 @@ const styles = (theme) => ({
     '& :hover #hexagonLogo': {
         transform: 'translate3d(0, 50px, 0) scale(0.5)'
     },
+    [theme.breakpoints.down('sm')]: {
+      filter: 'drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3))',
+    }
   },
   wrapOnMobile: {
     [theme.breakpoints.down('sm')]: {
